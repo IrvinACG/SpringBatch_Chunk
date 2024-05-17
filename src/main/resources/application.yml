@@ -1,0 +1,25 @@
+spring:
+#Configuracion de Batch
+  batch:
+    job:
+      enabled: true
+    jdbc:
+      initialize-schema: always
+
+#Configuracion de la BD     
+  datasource:
+    url: jdbc:mysql://{host}:3306/{database}
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+  sql:
+    init:
+      platform: mysql
+
+#Ubicacion del archivo - src/main/resource (No agregar)
+files:
+  batch:
+    persons: files/persons.csv
